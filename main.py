@@ -1,3 +1,4 @@
+import os
 import time
 from fs.system.HTK_video import SCRNCLR
 import fs.system.HTK_variables as var
@@ -42,10 +43,15 @@ try:
             time.sleep(0.03)
             initend = time.time()
             print(f"{var.GREEN}[waller1init] initialized successfully [{initend - initstart}]{var.RESET}")
+            print(var.GREEN + "[waller1init] now you will boot into waller1init nonbooted shell.\nif you want to log into your system write 'execsys'" + var.RESET)
             while True:
                 nonbooted = input("waller1init >> ")
                 if nonbooted == "version":
-                      print(" waller1init: version 1.00")
+                    print(" waller1init: version 1.00")
+                elif nonbooted == "execsys":
+                    print(" waller1init: executing system...")
+                    time.sleep(0.5)
+                    os.system("python3 -m fs.system.rcluser")
                 else:
                       print(var.RED + " waller1init: wrong cmd" + var.RESET)
             
