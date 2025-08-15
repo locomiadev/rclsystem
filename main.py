@@ -47,7 +47,9 @@ try:
             while True:
                 nonbooted = input("waller1init >> ")
                 if nonbooted == "version":
-                    print(" waller1init: version 1.00")
+                    print(" waller1init: version 1.1")
+                elif nonbooted == "shutdown":
+                    exit()
                 elif nonbooted == "execsys":
                     print(" waller1init: executing system...")
                     time.sleep(0.5)
