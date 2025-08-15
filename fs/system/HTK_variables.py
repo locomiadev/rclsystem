@@ -8,4 +8,4 @@ BOLD  = "\033[1m"
 # OTHER
 KERNEL = "htk"
 OS_NAME = "rclsystem"
-sysver = "0.3"
+sysver = "0.4"

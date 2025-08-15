@@ -5,4 +5,4 @@ vpath = ["/apps"]
 def help():
     print(" RSh v1.1")
     print(" Commands are:")
-    print(" help,  vpath,  shutdown,  version")
+    print(" help,  vpath,  shutdown,  version,  lsapps")

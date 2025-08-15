@@ -1,3 +1,5 @@
+RCLSYSAPPN = "Echo"
+RCLSYSAPPT = "Built-in"
 import sys
 
 def main():

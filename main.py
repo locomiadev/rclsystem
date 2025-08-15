@@ -53,7 +53,10 @@ try:
                 elif nonbooted == "execsys":
                     print(" waller1init: executing system...")
                     time.sleep(0.5)
-                    os.system("python3 -m fs.system.rcluser")
+                    try:
+                        os.system("python3 -m fs.system.rcluser")
+                    except KeyboardInterrupt:
+                        print(var.RED - "\n[waller1init] Force-shutdowned.")
                 else:
                       print(var.RED + " waller1init: wrong cmd" + var.RESET)
             

@@ -31,6 +31,32 @@ while True:
         exit()
     elif tesled == "help":
         rvar.help()
+    elif tesled == "lsapps":
+        for path in rvar.vpath:
+            full_path = os.path.join("fs", path.lstrip("/"))
+            if not os.path.isdir(full_path):
+                continue
+            for filename in os.listdir(full_path):
+                if not filename.endswith(".py"):
+                    continue
+                filepath = os.path.join(full_path, filename)
+                app_name = None
+                app_type = None
+
+                try:
+                    with open(filepath, "r", encoding="utf-8") as f:
+                        for line in f:
+                            if line.startswith("RCLSYSAPPN"):
+                                app_name = line.split("=", 1)[1].strip().strip('"').strip("'")
+                            elif line.startswith("RCLSYSAPPT"):
+                                app_type = line.split("=", 1)[1].strip().strip('"').strip("'")
+                            if app_name and app_type:
+                                break
+                    if app_name and app_type:
+                        print(f"{app_name} - {app_type}")
+
+                except:
+                    pass
     elif tesled == "vpath":
         print(f"{rvar.vpath}")
     else:
